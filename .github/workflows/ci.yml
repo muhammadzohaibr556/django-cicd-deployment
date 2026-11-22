@@ -18,6 +18,10 @@ jobs:
     name: Run Django Tests
     runs-on: ubuntu-latest
 
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: ${{ vars.DEBUG }}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
